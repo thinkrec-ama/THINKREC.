@@ -7,6 +7,10 @@ const ejs = require('gulp-ejs');
 const rename = require('gulp-rename');
 const autoprefixer = require('gulp-autoprefixer');
 const uglify = require('gulp-uglify');
+const imagemin = require("gulp-imagemin");
+const mozjpeg = require("imagemin-mozjpeg");
+const pngquant = require("imagemin-pngquant");
+const changed = require("gulp-changed");
 const browserSync = require('browser-sync').create();
 
 //setting : paths
@@ -18,11 +22,21 @@ const paths = {
         dist: './dest/'
     },
     styles: {
-        src: './src/sass/**/*.scss',
+        src: './src/assets/sass/**/*.scss',
         dist: './dest/css/'
     },
+    images: {
+        src: [
+            './src/assets/images/**/*.jpg',
+            './src/assets/images/**/*.png',
+            './src/assets/images/**/*.gif',
+            './src/assets/images/**/*.svg',
+            './src/assets/images/**/*.ico'
+        ],
+        dist: './dest/images/'
+    },
     scripts: {
-        src: './src/js/**/*.js',
+        src: './src/assets/js/**/*.js',
         dist: "./dest/js/"
     }
 };
@@ -92,6 +106,32 @@ task('js', function () {
     );
 });
 
+task('images', function() {
+    return (
+        src(paths.images.src)
+            .pipe(changed(paths.images.dist))
+            .pipe(plumber({
+                errorHandler: notify.onError({
+                    title: 'imgエラーだよ',
+                    message: '<%= error.message %>'
+                })
+            }))
+            .pipe(
+                imagemin([
+                    pngquant({
+                        quality: [.7, .85],
+                        speed: 1
+                    }),
+                    mozjpeg({
+                        quality: 85,
+                        progressive: true
+                    })
+                ])
+            )
+            .pipe(dest(paths.images.dist))
+    );
+});
+
 // browser-sync
 task('browser-sync', () => {
     return browserSync.init({
@@ -115,6 +155,7 @@ task('watch', (done) => {
     watch(paths.ejs.watch, gulp.task('ejs'));
     watch(paths.styles.src, gulp.task('sass'));
     watch(paths.scripts.src, gulp.task('js'));
+    watch(paths.images.src, gulp.task('images'));
     done();
 });
 task('default', parallel('watch', 'browser-sync'));
