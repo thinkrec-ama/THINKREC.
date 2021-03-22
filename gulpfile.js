@@ -15,15 +15,15 @@ const browserSync = require('browser-sync').create();
 
 //setting : paths
 const paths = {
-    root: './dest/',
+    root: './dist/',
     ejs: {
         src: ['./src/ejs/**/*.ejs', '!' + './src/ejs/**/_*.ejs'],
         watch: './src/ejs/**/*.ejs',
-        dist: './dest/'
+        dist: './dist/'
     },
     styles: {
         src: './src/assets/sass/**/*.scss',
-        dist: './dest/css/'
+        dist: './dist/css/'
     },
     images: {
         src: [
@@ -33,11 +33,11 @@ const paths = {
             './src/assets/images/**/*.svg',
             './src/assets/images/**/*.ico'
         ],
-        dist: './dest/images/'
+        dist: './dist/images/'
     },
     scripts: {
         src: './src/assets/js/**/*.js',
-        dist: "./dest/js/"
+        dist: "./dist/js/"
     }
 };
 
@@ -45,7 +45,7 @@ const paths = {
 const { watch, task, src, dest, parallel } = require('gulp');
 
 //ejs
-task('ejs', function () {
+gulp.task('ejs', function () {
     return (
         src(paths.ejs.src)
             .pipe(plumber({
@@ -58,12 +58,12 @@ task('ejs', function () {
             .pipe(rename({
                 extname: '.html'
             }))
-            .pipe(dest(paths.ejs.dist))
+            .pipe(gulp.dest(paths.ejs.dist))
     );
 });
 
 //Sass
-task('sass', function () {
+gulp.task('sass', function () {
     return (
         src(paths.styles.src)
             .pipe(plumber({
@@ -84,12 +84,12 @@ task('sass', function () {
                 cascade: false,
                 grid: true
             }))
-            .pipe(dest(paths.styles.dist))
+            .pipe(gulp.dest(paths.styles.dist))
     );
 });
 
 //JS Compress
-task('js', function () {
+gulp.task('js', function () {
     return (
         src(paths.scripts.src)
             .pipe(plumber({
@@ -102,11 +102,11 @@ task('js', function () {
             .pipe(rename({
                 suffix: '.min'
             }))
-            .pipe(dest(paths.scripts.dist))
+            .pipe(gulp.dest(paths.scripts.dist))
     );
 });
 
-task('images', function() {
+gulp.task('images', function() {
     return (
         src(paths.images.src)
             .pipe(changed(paths.images.dist))
@@ -128,7 +128,7 @@ task('images', function() {
                     })
                 ])
             )
-            .pipe(dest(paths.images.dist))
+            .pipe(gulp.dest(paths.images.dist))
     );
 });
 
@@ -145,17 +145,17 @@ task('browser-sync', () => {
 });
 
 // browser-sync reload
-task('reload', (done) => {
+gulp.task('reload', (done) => {
     browserSync.reload();
     done();
 });
 
 //watch
-task('watch', (done) => {
+gulp.task('watch', (done) => {
     watch(paths.ejs.watch, gulp.task('ejs'));
     watch(paths.styles.src, gulp.task('sass'));
     watch(paths.scripts.src, gulp.task('js'));
     watch(paths.images.src, gulp.task('images'));
     done();
 });
-task('default', parallel('watch', 'browser-sync'));
+gulp.task('default', parallel('watch', 'browser-sync'));
