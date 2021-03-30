@@ -1,0 +1,17 @@
+.footerWrap {
+  padding: 10px 20px;
+}
+.footerInner {
+  display: flex;
+  justify-content: flex-end;
+
+  @include media(sp) {
+    justify-content: center;
+  }
+}
+.copyright {
+  small {
+    font-size: 10px;
+    color: #333;
+  }
+}

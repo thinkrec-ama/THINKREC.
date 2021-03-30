@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>CONTACT | THINKREC.</title>
+    <meta name="keywords" content="DJ,プロデューサー,音楽レーベル,THINKREC,シンクレック,DJ DUCT,ダクト">
+    <meta name="description" content="DJ/プロデューサーのDJ DUCTが主催する音楽レーベル。ミュージシャン、デザイナー、ウェブエンジニア、料理人と共に、音楽制作、アパレル、木工家具のデザイン、飲食店の企画、運営などを手がけ、良質な音楽と楽しい酒を探求">
+    <meta property="og:title" content="THINKREC.">
+    <meta property="og:description" content="DJ/プロデューサーのDJ DUCTが主催する音楽レーベル。ミュージシャン、デザイナー、ウェブエンジニア、料理人と共に、音楽制作、アパレル、木工家具のデザイン、飲食店の企画、運営などを手がけ、良質な音楽と楽しい酒を探求">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:url" content="https://www.thinkrec.com/">
+    <meta property="og:image" content="https://www.thinkrec.com/images/common/og_thinkrec.png">
+    <meta property="og:site_name" content="THINKREC.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://www.thinkrec.com/">
+    <link rel="shortcut icon" href="/images/common/favicon.ico">
+    <link rel="stylesheet" href="/css/style.min.css">
+</head>
+<body class="contactBody">
+<%- include('layout/_header.ejs') %>
+<div class="contactWrap">
+    <div class="contactHeadline">
+        <h2 class="headline">Contact</h2>
+        <p class="jaHeadline">お問い合わせ</p>
+    </div>
+    <div class="contactFormWrap">
+        <form name="contact" method="post" netlify>
+            <dl class="formItem">
+                <dt>お名前</dt>
+                <dd>
+                    <label>
+                        <input type="text" name="お名前" id="" placeholder="" class="formInputText">
+                    </label>
+                </dd>
+                <dt>メールアドレス</dt>
+                <dd>
+                    <label>
+                        <input type="text" name="メールアドレス" id="" placeholder="" class="formInputText">
+                    </label>
+                </dd>
+                <dt>ご連絡可能な電話番号 ※任意</dt>
+                <dd>
+                    <label>
+                        <input type="text" name="ご連絡可能な電話番号" id="" placeholder="09011112222" class="formInputText">
+                    </label>
+                </dd>
+                <dt>お問い合わせ種別</dt>
+                <dd>
+                    <label class="label">
+                        <select name="お問い合わせ種別[]" id="" class="formSelectBox">
+                            <option value="選択してください">選択してください</option>
+                            <option value="デザインのご依頼">デザインのご依頼</option>
+                            <option value="その他">その他</option>
+                        </select>
+                    </label>
+                </dd>
+                <dt>お問い合わせ内容</dt>
+                <dd>
+                    <textarea name="お問い合わせ内容" id="" cols="30" rows="10" class="formTextarea"></textarea>
+                </dd>
+            </dl>
+            <div class="submitButtonWrap">
+                <button type="submit" class="submitButton">送信する</button>
+            </div>
+        </form>
+    </div>
+</div>
+<%- include('layout/_footer') %>
+<script type="text/javascript" src="/js/libs/jquery-3.6.0.min.js"></script>
+</body>
+</html>
