@@ -38,13 +38,53 @@
   & > li {
 
     & > a {
+      position: relative;
       display: block;
       text-decoration: none;
-      color: #333333;
+      color: #333;
+      padding-bottom: 5px;
       font-size: 13px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 10%;
+        width: 80%;
+        height: 1px;
+        background: #333;
+        transition: all .3s;
+        transform: scale(0, 1);
+        transform-origin: left top;
+      }
+      &:hover {
+        color: #333;
+
+        &::after {
+          transform: scale(1, 1);
+        }
+      }
     }
     & + li {
-      margin-left: 20px;
+      margin-left: 30px;
     }
   }
 }
+//.navList {
+//  display: flex;
+//  align-items: center;
+//
+//  & > li {
+//
+//    & > a {
+//      display: block;
+//      text-decoration: none;
+//      color: #333333;
+//      font-size: 13px;
+//      font-weight: bold;
+//    }
+//    & + li {
+//      margin-left: 20px;
+//    }
+//  }
+//}

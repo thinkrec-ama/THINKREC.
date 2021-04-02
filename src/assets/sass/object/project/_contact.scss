@@ -8,6 +8,7 @@
 
   @include media(sp) {
     width: calc((100% - 30px));
+    padding-bottom: 10px;
   }
 }
 .contactHeadline {
@@ -43,7 +44,7 @@
 }
 .formItem {
   > dt {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
     & ~ dt {
       margin-top: 20px;
@@ -90,6 +91,13 @@
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
+
+  option {
+    color: #CCC;
+    &:first-child {
+      display: none;
+    }
+  }
 }
 .formTextarea {
   width: 100%;
@@ -119,4 +127,8 @@
   &:hover {
     background: #ffc062;
   }
+}
+input::placeholder,
+textarea::placeholder {
+  color: #CCC;
 }
