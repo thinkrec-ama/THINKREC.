@@ -140,6 +140,7 @@ task('browser-sync', () => {
             index: 'index.html'
         },
         port: 8080,
+        online: true,
         reloadOnRestart: true
     });
 });
