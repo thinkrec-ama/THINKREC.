@@ -1,3 +1,6 @@
+body {
+	background: #f6f6f6;
+}
 .loadingWrap {
 	position: fixed;
 	width: 100%;
@@ -35,4 +38,7 @@
 			}
 		}
 	}
+}
+.mainWrap {
+	margin-left: 120px;
 }

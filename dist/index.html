@@ -20,24 +20,70 @@
     <link rel="stylesheet" href="/css/style.min.css">
 </head>
 <body>
-<div class="loadingWrap">
-    <div class="loadingLogoWrap">
-        <img src="/images/common/logo_thinkrec.png" alt="" class="fadeUp">
+<!--<div class="loadingWrap">-->
+<!--    <div class="loadingLogoWrap">-->
+<!--        <img src="/images/common/logo_thinkrec.png" alt="" class="fadeUp">-->
+<!--    </div>-->
+<!--</div>-->
+
+<div class="sideMenuWrap">
+    <div class="topLogo">
+        <a href="/">
+            <img src="/images/common/logo_thinkrec.png" alt="THINKREC.">
+        </a>
+    </div>
+    <div class="hamburgerMenu jcsMenuToggle">
+        <span class="menuLine jcsMenuLine"></span>
+        <span class="menuLine jcsMenuLine"></span>
     </div>
 </div>
-<header class="headerWrap">
-    <div class="headerInner">
-        <div class="headerLogoWrap"><a href="/"><img src="/images/common/top_logo.png" alt="/"></a></div>
-        <nav class="nav">
-            <ul class="navList">
-                <li class="current"><a href="/">TOP</a></li>
-                <li><a href="https://www.djduct.com/" target="_blank">ARTIST</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-            </ul>
-        </nav>
+<nav class="gnav jscGnav">
+    <div class="gnavWrap">
+        <ul class="gnavMenu">
+            <li><a href="">TOP</a></li>
+            <li><a href="">ABOUT US</a></li>
+            <li><a href="">WORKS</a></li>
+            <li><a href="">CONTACT</a></li>
+            <li><a href="">ONLINE STORE</a></li>
+        </ul>
     </div>
-</header>
-<div class="full"></div>
+</nav>
+<main class="mainWrap">
+    <section class="kvSection">
+        <ol id="kvSliderList">
+            <li class="slide_item"><img src="/images/slider/kv_slider_001.png" alt="" onload="sliderStart()"></li>
+            <li class="slide_item"><img src="https://dl.dropbox.com/s/fipy7gw576dw7fq/slide02.jpg?dl=0" alt=""></li>
+            <li class="slide_item"><img src="https://dl.dropbox.com/s/k33q4jrkml3zl6j/slide03.jpg?dl=0" alt=""></li>
+        </ol>
+<!--        <ol class="kvSlider">-->
+<!--            <li><img src="/images/slider/kv_slider_001.png" alt=""></li>-->
+<!--        </ol>-->
+    </section>
+    <section>
+        <div>
+            <h2>ABOUT US</h2>
+            <div class="aboutTextWrap">
+                <div class="kyeTextWrap">
+                    <h3>キャッチコピー</h3>
+                    <p>テキストテキストテキスト</p>
+                </div>
+                <div class="aboutImgeWrap">
+                    <img src="https://placehold.jp/800x500.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div>
+            <h2>WORKS</h2>
+        </div>
+    </section>
+    <section>
+        <div>
+            <h2>CONTACT</h2>
+        </div>
+    </section>
+</main>
 <footer class="footerWrap">
     <div class="footerInner">
         <p class="copyright"><small>Copyright © 2020 THINKREC. All Rights Reserved.</small></p>
