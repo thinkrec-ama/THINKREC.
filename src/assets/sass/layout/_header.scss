@@ -1,6 +1,6 @@
 .headerWrap {
-  padding: 15px 30px;
-  box-shadow: 0 32px 30px -30px rgba(53, 47, 47, 0.15);
+  padding: 10px 30px;
+  border-bottom: 1px solid #000;
 
   @include media(sp) {
     width: 100%;
@@ -43,9 +43,11 @@
       position: relative;
       display: block;
       text-decoration: none;
-      color: #373737;
+      color: #1f1f1f;
       padding-bottom: 5px;
       font-size: 100%;
+      font-family: 'Inter', sans-serif;
+      font-weight: bold;
 
       &::after {
         content: '';
