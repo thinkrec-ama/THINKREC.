@@ -15,6 +15,7 @@
   .headline {
     font-weight: bold;
     font-size: 40px;
+    color: #eb503c;
 
     @include media(sp) {
       font-size: 30px;
@@ -46,6 +47,7 @@
   > dt {
     font-size: 14px;
     font-weight: bold;
+    color: #eb503c;
     & ~ dt {
       margin-top: 20px;
     }
@@ -62,7 +64,7 @@
   border-radius: 3px;
   border: 0;
   font-size: 15px;
-  border: 1px solid #999999;
+  border: 1px solid #eb503c;
 }
 .label {
   position: relative;
@@ -108,7 +110,7 @@
   border-radius: 3px;
   border: 0;
   font-size: 15px;
-  border: 1px solid #999999;
+  border: 1px solid #eb503c;
 }
 .submitButtonWrap {
   margin-top: 20px;
@@ -124,11 +126,11 @@
   padding: 10px 20px;
   cursor: pointer;
   background: none;
-  border: 2px solid #333333;
-  color: #333333;
+  border: 2px solid #eb503c;
+  color: #eb503c;
 
   &:hover {
-    background: #333333;
+    background: #eb503c;
     color: #FFFFFF;
   }
 }
